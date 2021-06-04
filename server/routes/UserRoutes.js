@@ -1,26 +1,37 @@
 const userRouter = require("express").Router();
 const userService = require("../services/UserService");
 
-userRouter.get('/', async (req, res) => {
-    console.log('GET /')
-
-    res.sendStatus(200)
-
-})
-
 userRouter.post('/data', async (req, res) => {
-    console.log('PUT /data')
+    console.log('POST /data')
 
-    await userService.importData(req.body)
+    let status = await userService.importData(req.body)
 
-    res.sendStatus(200)
+    res.json(status)
 
 })
 
-userRouter.get('/status', async (req, res) => {
-    console.log('GET /status')
+userRouter.post('/setLight', async (req, res) => {
+    console.log('POST /setLight')
 
-    res.json(userService.processData())
+    let status = await userService.setLightThreshold(req.body)
+
+    res.json(status)
+
+})
+
+userRouter.post('/setTemp', async (req, res) => {
+    console.log('POST /setTemp')
+
+    let status = await userService.setTempThreshold(req.body)
+
+    res.json(status)
+
+})
+
+userRouter.get('/vitals', async (req, res) => {
+    console.log('GET /vitals')
+
+    res.json(userService.getVitals())
 
 })
 
