@@ -39,7 +39,7 @@ function App() {
         const data = {
             "setTempVal": setTempVal
         }
-        axios.post('http://127.0.0.1:5000/setTemp', data).catch(err => console.log(err))
+        axios.post('https://zothome.herokuapp.com/setTemp', data).catch(err => console.log(err))
     }
 
     const sendSetLight = () => {
@@ -48,7 +48,7 @@ function App() {
         const data = {
             "setLightVal": setLightVal
         }
-        axios.post('http://127.0.0.1:5000/setLight', data).catch(err => console.log(err))
+        axios.post('https://zothome.herokuapp.com/setLight', data).catch(err => console.log(err))
     }
 
     setTimeout(() => {
@@ -71,7 +71,7 @@ function App() {
 
     useEffect(() => {
         console.log("----------- " + 'API Call ' + timeInterval + " ------------")
-        axios.get('http://127.0.0.1:5000/vitals')
+        axios.get('https://zothome.herokuapp.com/vitals')
             .then(res => {
                 console.log('Get request status: ' + res.status)
 
