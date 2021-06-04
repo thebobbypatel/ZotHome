@@ -13,7 +13,7 @@ let lightOn = false
 
 let setTemp = 72
 let setLight = 4000
-let setSound = 4000
+let setSound = 2000
 
 const setLightThreshold = (data) => {
     console.log(data)
