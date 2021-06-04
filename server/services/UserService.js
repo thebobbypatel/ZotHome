@@ -48,9 +48,7 @@ const importData = (data) => {
     processData()
 
     let status = {
-        lightbulb: lightOn,
-        setLight: setLight,
-        setTemp: setTemp
+        lightbulb: lightOn
     }
     console.log(data)
     return status
