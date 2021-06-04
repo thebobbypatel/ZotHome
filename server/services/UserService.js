@@ -65,10 +65,10 @@ const processData = () => {
         lightOn = false;
     }
 
-    if(currentTemp < setTemp){
+    if(currentTemp > setTemp){
         tempControl = "A/C"
     }
-    else if(currentTemp > setTemp){
+    else if(currentTemp < setTemp){
         tempControl = 'Heater'
     }
     else{
